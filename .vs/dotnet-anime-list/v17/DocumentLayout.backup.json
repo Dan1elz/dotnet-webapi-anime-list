@@ -1,0 +1,198 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\data\\dtos\\seasondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|solutionrelative:data\\dtos\\seasondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\api\\controllers\\animecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|solutionrelative:api\\controllers\\animecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\data\\dtos\\animedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|solutionrelative:data\\dtos\\animedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\api\\models\\season.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|solutionrelative:api\\models\\season.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\api\\services\\animeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|solutionrelative:api\\services\\animeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|solutionrelative:api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\api\\repositories\\animerepository\\animerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|solutionrelative:api\\repositories\\animerepository\\animerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\api\\repositories\\genrerepository\\genrerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|solutionrelative:api\\repositories\\genrerepository\\genrerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\data\\mappers\\animemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|solutionrelative:data\\mappers\\animemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Season.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Models\\Season.cs",
+              "RelativeDocumentMoniker": "API\\Models\\Season.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Models\\Season.cs",
+              "RelativeToolTip": "API\\Models\\Season.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T01:53:04.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AnimeService.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Services\\AnimeService.cs",
+              "RelativeDocumentMoniker": "API\\Services\\AnimeService.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Services\\AnimeService.cs",
+              "RelativeToolTip": "API\\Services\\AnimeService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T21:09:53.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AnimeController.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Controllers\\AnimeController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\AnimeController.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Controllers\\AnimeController.cs",
+              "RelativeToolTip": "API\\Controllers\\AnimeController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAQwB0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T21:09:33.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AnimeDTO.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\Data\\DTOs\\AnimeDTO.cs",
+              "RelativeDocumentMoniker": "Data\\DTOs\\AnimeDTO.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\Data\\DTOs\\AnimeDTO.cs",
+              "RelativeToolTip": "Data\\DTOs\\AnimeDTO.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAwwBYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T21:09:11.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SeasonDTO.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\Data\\DTOs\\SeasonDTO.cs",
+              "RelativeDocumentMoniker": "Data\\DTOs\\SeasonDTO.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\Data\\DTOs\\SeasonDTO.cs",
+              "RelativeToolTip": "Data\\DTOs\\SeasonDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T01:17:07.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Controllers\\UserController.cs",
+              "RelativeToolTip": "API\\Controllers\\UserController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T01:15:57.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AnimeRepository.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Repositories\\AnimeRepository\\AnimeRepository.cs",
+              "RelativeDocumentMoniker": "API\\Repositories\\AnimeRepository\\AnimeRepository.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Repositories\\AnimeRepository\\AnimeRepository.cs",
+              "RelativeToolTip": "API\\Repositories\\AnimeRepository\\AnimeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T21:09:31.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GenreRepository.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Repositories\\GenreRepository\\GenreRepository.cs",
+              "RelativeDocumentMoniker": "API\\Repositories\\GenreRepository\\GenreRepository.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Repositories\\GenreRepository\\GenreRepository.cs",
+              "RelativeToolTip": "API\\Repositories\\GenreRepository\\GenreRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T21:09:47.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AnimeMapper.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\Data\\Mappers\\AnimeMapper.cs",
+              "RelativeDocumentMoniker": "Data\\Mappers\\AnimeMapper.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\Data\\Mappers\\AnimeMapper.cs",
+              "RelativeToolTip": "Data\\Mappers\\AnimeMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T21:09:06.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAwD8AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T20:58:53.857Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

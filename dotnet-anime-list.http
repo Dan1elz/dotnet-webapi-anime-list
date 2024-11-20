@@ -1,0 +1,6 @@
+@dotnet_anime_list_HostAddress = http://localhost:5188
+
+GET {{dotnet_anime_list_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

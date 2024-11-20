@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "s416eBjsF0rVtkwvGC+0XuM1wtVeVTZy0dS6KlmQtMA=",
+  "Source": "dotnet-anime-list",
+  "BasePath": "_content/dotnet-anime-list",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
