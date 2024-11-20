@@ -18,13 +18,14 @@ namespace dotnet_anime_list.Data.Mappers
         {
             return new AnimeGenresDTO(AnimeId, GenreId);
         }
-        public static GetAnimesDTO MapToGetAnimesDTO(Anime anime, int Seasons)
+        public static GetAnimesDTO MapToGetAnimesDTO(Anime anime, int Seasons, string animeUrl)
         {
-            return new GetAnimesDTO(anime, Seasons);
+           
+            return new GetAnimesDTO(anime, Seasons, animeUrl);
         }
-        public static GetAnimeDTO MapToGetAnimeDTO(Anime anime, List<GenreDTO> genres, List<Season> seasons)
+        public static GetAnimeDTO MapToGetAnimeDTO(Anime anime, List<GenreDTO> genres, List<Season> seasons, string hostUrl)
         {
-            return new GetAnimeDTO(new AnimeDTO(anime.UserId, anime.Title, anime.AlternativeTitle, anime.Year, anime.Image, anime.Description, anime.Lenguage, anime.Rating, anime.FavoriteState, anime.WatchedState), genres, seasons);
+            return new GetAnimeDTO(new AnimeDTO(anime.UserId, anime.Title, anime.AlternativeTitle, anime.Year, anime.Image, anime.Description, anime.Lenguage, anime.Rating, anime.FavoriteState, anime.WatchedState), genres, seasons, hostUrl);
         }
 
     }

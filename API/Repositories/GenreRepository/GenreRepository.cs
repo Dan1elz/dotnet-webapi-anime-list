@@ -1,5 +1,6 @@
 ﻿using dotnet_anime_list.API.Models;
 using dotnet_anime_list.Data;
+using dotnet_anime_list.Data.DTOs;
 using Microsoft.EntityFrameworkCore;
 
 namespace dotnet_anime_list.API.Repositories.GenreRepository
@@ -8,27 +9,31 @@ namespace dotnet_anime_list.API.Repositories.GenreRepository
     {
         private readonly AppDbContext _context = context;
 
+        public async Task<Genre?> GetGenre(Guid Id, CancellationToken ct)
+        {
+            return await _context.Genre.Where(Genre => Genre.Id == Id).FirstOrDefaultAsync(ct);
+        }
         public async Task Create(Genre genre, CancellationToken ct)
         {
             await _context.Genre.AddAsync(genre, ct);
             await _context.SaveChangesAsync(ct);
         }
-
         public async Task Delete(Genre genre, CancellationToken ct)
         {
             _context.Genre.Remove(genre);
             await _context.SaveChangesAsync(ct);
         }
-
-        public async Task<Genre?> GetGenre(Guid Id, CancellationToken ct)
+        public async Task Update(Genre genre, GenreDTO genreDTO, CancellationToken ct)
         {
-            return await _context.Genre.Where(Genre => Genre.Id == Id).FirstOrDefaultAsync(ct);
+            genre.Update(genreDTO);
+            await _context.SaveChangesAsync(ct);
         }
-
         public async Task<List<Genre>> GetAllGenres(CancellationToken ct)
         {
             return await _context.Genre.ToListAsync(ct);
         }
+        
+        
         public async Task AddAnimeGenre(AnimeGenres animeGenres, CancellationToken ct)
         {
             await _context.AnimeGenres.AddAsync(animeGenres, ct);

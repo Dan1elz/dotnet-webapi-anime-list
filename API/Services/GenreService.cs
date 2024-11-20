@@ -20,12 +20,20 @@ namespace dotnet_anime_list.API.Services
 
             await _repository.Delete(genre, ct);
         }
-        public async Task<List<Genre>> GetGenres(Guid AnimeId, CancellationToken ct)
+        public async Task Update(Guid Id, GenreDTO genre, CancellationToken ct)
         {
-            var genres = await _repository.GetAnimeGenresInGenre(AnimeId, ct);
-            // if (genres.Count == 0) throw new Exception("Genres not found");
+            Genre? genreToUpdate = await _repository.GetGenre(Id, ct);
+            if (genreToUpdate == null) throw new Exception("Genre not found");
 
-            return genres;
+            await _repository.Update(genreToUpdate, genre, ct);
+        }
+        public async Task<List<Genre>> GetAllGenres(CancellationToken ct)
+        {
+            return await _repository.GetAllGenres(ct);
+        }
+        public async Task<List<Genre>> GetAllAnimeGenres(Guid AnimeId, CancellationToken ct)
+        {
+            return await _repository.GetAnimeGenresInGenre(AnimeId, ct);
         }
         public async Task AddAnimeGenre(List<Guid> Genres, Guid AnimeId, CancellationToken ct)
         {
@@ -41,13 +49,6 @@ namespace dotnet_anime_list.API.Services
                     await _repository.AddAnimeGenre(animeGenre, ct);
                 }
             }
-        }
-        public async Task<List<Genre>> GetAllAnimeGenres(Guid AnimeId, CancellationToken ct)
-        {
-            var animeGenres = await _repository.GetAnimeGenresInGenre(AnimeId, ct);
-            if (animeGenres.Count == 0) throw new Exception("Anime not found");
-
-            return animeGenres;
         }
     }
 }

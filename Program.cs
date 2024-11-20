@@ -12,6 +12,7 @@ using System.Text;
 using dotnet_anime_list.API.Repositories.AnimeRepository;
 using dotnet_anime_list.API.Repositories.GenreRepository;
 using dotnet_anime_list.API.Repositories.SeasonRepository;
+using Microsoft.Extensions.FileProviders;
 
 internal class Program
 {
@@ -69,6 +70,7 @@ internal class Program
         builder.Services.AddScoped<UtilsService>();
         builder.Services.AddScoped<GenreService>();
         builder.Services.AddScoped<SeasonService>();
+        builder.Services.AddHttpContextAccessor();
 
         builder.Services.AddScoped<IUserRepository, UserRepository>();
         builder.Services.AddScoped<ITokenRepository, TokenRepository>();
@@ -103,6 +105,12 @@ internal class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
+
+        app.UseStaticFiles(new StaticFileOptions
+        {
+            FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Uploads")),
+            RequestPath = "/Uploads"
+        });	
 
         app.UseHttpsRedirection();
         app.UseCors();

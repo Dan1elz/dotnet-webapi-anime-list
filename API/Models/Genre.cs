@@ -14,5 +14,9 @@ namespace dotnet_anime_list.API.Models
         {
             this.Name = genre.Name;
         }
+        public void Update(GenreDTO genre)
+        {
+            this.Name = genre.Name;
+        }
     }
 }

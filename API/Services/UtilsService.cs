@@ -1,4 +1,5 @@
 ﻿using dotnet_anime_list.API.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace dotnet_anime_list.API.Services
 {
@@ -21,9 +22,20 @@ namespace dotnet_anime_list.API.Services
             }
             return fileName;
         }
+        
+        public void RemoveImg(string path, string fileName, CancellationToken ct)
+        {
+            var filePath = Path.Combine(path, fileName);
+            if (File.Exists(filePath)) File.Delete(filePath);
+        }
 
+        public async Task<FileContentResult?> GetImg(string path, string fileName, CancellationToken ct)
+        {
+            var filePath = Path.Combine(path, fileName);
+            if (!File.Exists(filePath)) return null;
 
-        //Tenho que fazer a função pra remover uma imagem, para as funções de atualização.
-        //também tenho que fazer a função para pegar uma imagem e retornar um FileContentResult?, para as funções de leitura.
+            var bytes = await File.ReadAllBytesAsync(filePath, ct);
+            return new FileContentResult(bytes, "image/jpeg");
+        }
     }
 }

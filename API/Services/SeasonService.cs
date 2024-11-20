@@ -33,5 +33,5 @@ namespace dotnet_anime_list.API.Services
             return result.Count;
         }
 
-    }
+    } 
 }

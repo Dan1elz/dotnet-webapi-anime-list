@@ -25,11 +25,13 @@ namespace dotnet_anime_list.Data.DTOs
 
     public record GetAnimesDTO(
         Anime Anime,
-        int Seasons
+        int Seasons,
+        string AnimeUrl
     );
     public record GetAnimeDTO(
         AnimeDTO Anime,
         List<GenreDTO> Genres,
-        List<Season> Seasons
+        List<Season> Seasons,
+        string hostUrl
     );
 }

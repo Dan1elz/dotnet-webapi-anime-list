@@ -59,5 +59,7 @@ namespace dotnet_anime_list.API.Controllers
                 return BadRequest(new { message = "Error getting anime: " + e.Message });
             }
         }
+
+        //rotas para deletar um anime, atualizar um anime. 
     }
 }
