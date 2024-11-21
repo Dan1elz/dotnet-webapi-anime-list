@@ -1,19 +1,18 @@
 using dotnet_anime_list;
 using dotnet_anime_list.Data;
-using dotnet_anime_list.API.Models;
 using dotnet_anime_list.API.Services;
-using dotnet_anime_list.API.Repositories.TokenRepository;
 using dotnet_anime_list.API.Repositories.UserRepository;
+using dotnet_anime_list.API.Repositories.GenreRepository;
+using dotnet_anime_list.API.Repositories.TokenRepository;
+using dotnet_anime_list.API.Repositories.AnimeRepository;
+using dotnet_anime_list.API.Repositories.SeasonRepository;
+using dotnet_anime_list.API.Repositories.CommentRepository;
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
-using dotnet_anime_list.API.Repositories.AnimeRepository;
-using dotnet_anime_list.API.Repositories.GenreRepository;
-using dotnet_anime_list.API.Repositories.SeasonRepository;
-using Microsoft.Extensions.FileProviders;
-using dotnet_anime_list.API.Repositories.CommentRepository;
 
 internal class Program
 {
