@@ -40,8 +40,8 @@ namespace dotnet_anime_list.API.Controllers
                 return BadRequest(new { message = "Error when logging in: " + e.Message });
             }
         }
-        [HttpGet]
         [Authorize]
+        [HttpGet]
         public async Task<IActionResult> GetUser(CancellationToken ct)
         {
             try
@@ -58,8 +58,8 @@ namespace dotnet_anime_list.API.Controllers
             }
         }
 
-        [HttpPut]
         [Authorize]
+        [HttpPut]
         public async Task<IActionResult> Update(UpdateUserDTO user, CancellationToken ct)
         {
             try
@@ -75,8 +75,8 @@ namespace dotnet_anime_list.API.Controllers
             }
         }
 
-        [HttpDelete]
         [Authorize]
+        [HttpDelete]
         public async Task<IActionResult> Delete(CancellationToken ct)
         {
             try

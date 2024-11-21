@@ -13,13 +13,13 @@ using dotnet_anime_list.API.Repositories.AnimeRepository;
 using dotnet_anime_list.API.Repositories.GenreRepository;
 using dotnet_anime_list.API.Repositories.SeasonRepository;
 using Microsoft.Extensions.FileProviders;
+using dotnet_anime_list.API.Repositories.CommentRepository;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-
 
         builder.Services.AddControllers();
         builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
@@ -60,7 +60,6 @@ internal class Program
         }
             });
         });
-
         
         builder.Services.AddScoped<AppDbContext>();
         builder.Services.AddScoped<UserService>();
@@ -70,6 +69,7 @@ internal class Program
         builder.Services.AddScoped<UtilsService>();
         builder.Services.AddScoped<GenreService>();
         builder.Services.AddScoped<SeasonService>();
+        builder.Services.AddScoped<CommentService>();
         builder.Services.AddHttpContextAccessor();
 
         builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -77,6 +77,7 @@ internal class Program
         builder.Services.AddScoped<IAnimeRepository, AnimeRepository>();
         builder.Services.AddScoped<IGenreRepository, GenreRepository>();
         builder.Services.AddScoped<ISeasonRepository, SeasonRepository>();
+        builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 
         var key = Encoding.ASCII.GetBytes(Key.secret);
         builder.Services.AddAuthentication(x =>
@@ -99,7 +100,6 @@ internal class Program
 
         var app = builder.Build();
 
-
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
@@ -114,12 +114,9 @@ internal class Program
 
         app.UseHttpsRedirection();
         app.UseCors();
-
         app.UseRouting(); 
-
         app.UseAuthentication();
         app.UseAuthorization();
-
         app.MapControllers();
 
         app.Run();

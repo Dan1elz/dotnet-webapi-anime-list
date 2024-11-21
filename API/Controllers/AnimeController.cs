@@ -13,8 +13,8 @@ namespace dotnet_anime_list.API.Controllers
        private readonly AnimeService _service = service;
        private readonly AuthService _authService = authService;
 
-        [HttpPost]
         [Authorize]
+        [HttpPost]
         public async Task<IActionResult> Create([FromForm] CreateAnimeDTO anime, CancellationToken ct)
         {
             try
@@ -29,8 +29,8 @@ namespace dotnet_anime_list.API.Controllers
             }
         }
         
-        [HttpGet]
         [Authorize]
+        [HttpGet]
         public async Task<IActionResult> GetAnimes(CancellationToken ct)
         {
             try
@@ -45,8 +45,8 @@ namespace dotnet_anime_list.API.Controllers
             }
         }
 
-        [HttpGet("{animeId}")]
         [Authorize]
+        [HttpGet("{animeId}")]
         public async Task<IActionResult> GetAnime(Guid animeId, CancellationToken ct)
         {
             try
@@ -61,5 +61,6 @@ namespace dotnet_anime_list.API.Controllers
         }
 
         //rotas para deletar um anime, atualizar um anime. 
+        //todas as rotas de visualização personalizada de animes
     }
 }

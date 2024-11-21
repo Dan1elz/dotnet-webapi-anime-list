@@ -3,7 +3,6 @@ using dotnet_anime_list.API.Repositories.AnimeRepository;
 using dotnet_anime_list.Data.DTOs;
 using dotnet_anime_list.Data.Mappers;
 
-
 namespace dotnet_anime_list.API.Services
 {
     public class AnimeService(IAnimeRepository repository, UtilsService utilsService, GenreService genreService, SeasonService seasonService, IHttpContextAccessor httpContextAccessor)
@@ -19,14 +18,12 @@ namespace dotnet_anime_list.API.Services
             var filePath = "Uploads/Images/Animes";
             var image = await _utilsService.SaveImg(anime.Image, filePath, ct);
 
-            var newAnime = new Anime(AnimeMapper.MapAnimeDTO(token.UserId, anime, image));
+            Anime newAnime = new(AnimeMapper.MapAnimeDTO(token.UserId, anime, image));
             await _repository.Create(newAnime, ct);
 
             if (anime.Genres != null)
                 await _genreService.AddAnimeGenre(anime.Genres, newAnime.Id, ct);
-
         }
-
         public async Task<List<GetAnimesDTO>> GetAnimes(Token token, CancellationToken ct)
         {
             List<Anime> animes = await _repository.GetAnimes(token.UserId, ct);
@@ -42,7 +39,6 @@ namespace dotnet_anime_list.API.Services
                 var animeDTO = AnimeMapper.MapToGetAnimesDTO(anime, quantitySeasons, hostUrl);
                 animeDTOs.Add(animeDTO);
             } 
-
             return animeDTOs;
         }
         public async Task<GetAnimeDTO> GetAnime(Guid animeId, CancellationToken ct)
@@ -54,8 +50,11 @@ namespace dotnet_anime_list.API.Services
             var hostUrl = $"{request.Scheme}://{request.Host}/Uploads/Images/Animes/{anime.Image}";
 
             var genreDTOs = genres.Select(genre => new GenreDTO(genre.Name)).ToList();
-            var animeDTO = AnimeMapper.MapToGetAnimeDTO(anime, genreDTOs, seasons, hostUrl);
-            return animeDTO;
+            return AnimeMapper.MapToGetAnimeDTO(anime, genreDTOs, seasons, hostUrl);;
+        }
+        public async Task VerifyAnime(Guid AnimeId, CancellationToken ct)
+        {
+            var anime = await _repository.GetAnime(AnimeId, ct) ?? throw new Exception("Anime not found");
         }
     }
 }

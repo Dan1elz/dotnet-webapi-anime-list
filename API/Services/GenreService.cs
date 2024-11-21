@@ -8,6 +8,7 @@ namespace dotnet_anime_list.API.Services
     public class GenreService(IGenreRepository repository)
     {
         private readonly IGenreRepository _repository = repository;
+        
         public async Task Create(GenreDTO genre, CancellationToken ct)
         {
             var newGenre = new Genre(genre);
@@ -15,16 +16,12 @@ namespace dotnet_anime_list.API.Services
         }
         public async Task Delete(Guid Id, CancellationToken ct)
         {
-            Genre? genre = await _repository.GetGenre(Id, ct);
-            if (genre == null) throw new Exception("Genre not found");
-
+            Genre? genre = await _repository.GetGenre(Id, ct) ?? throw new Exception("Genre not found");
             await _repository.Delete(genre, ct);
         }
         public async Task Update(Guid Id, GenreDTO genre, CancellationToken ct)
         {
-            Genre? genreToUpdate = await _repository.GetGenre(Id, ct);
-            if (genreToUpdate == null) throw new Exception("Genre not found");
-
+            Genre? genreToUpdate = await _repository.GetGenre(Id, ct) ?? throw new Exception("Genre not found");
             await _repository.Update(genreToUpdate, genre, ct);
         }
         public async Task<List<Genre>> GetAllGenres(CancellationToken ct)

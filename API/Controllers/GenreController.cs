@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace dotnet_anime_list.API.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class GenreController(GenreService service) : ControllerBase
     {
         private readonly GenreService _service = service;

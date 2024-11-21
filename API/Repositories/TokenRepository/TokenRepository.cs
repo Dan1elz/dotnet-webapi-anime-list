@@ -13,6 +13,11 @@ namespace dotnet_anime_list.API.Repositories.TokenRepository
             await _context.Token.AddAsync(token, ct);
             await _context.SaveChangesAsync(ct);
         }
+        public async Task Delete(Token token, CancellationToken ct)
+        {
+            _context.Token.Remove(token);
+            await _context.SaveChangesAsync(ct);
+        }
         public async Task<Token?> GetToken(string token, CancellationToken ct)
         {
            return  await _context.Token.FirstOrDefaultAsync(u => u.Value == token, ct);
@@ -22,10 +27,6 @@ namespace dotnet_anime_list.API.Repositories.TokenRepository
         {
             return await _context.Token.FirstOrDefaultAsync(u => u.UserId == Id, ct);
         }
-        public async Task Delete(Token token, CancellationToken ct)
-        {
-            _context.Token.Remove(token);
-            await _context.SaveChangesAsync(ct);
-        }
+        
     }
 }

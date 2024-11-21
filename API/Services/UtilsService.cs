@@ -5,7 +5,6 @@ namespace dotnet_anime_list.API.Services
 {
     public class UtilsService
     {
-
         public async Task<string> SaveImg(IFormFile img, string path, CancellationToken ct)
         {
             if (img == null || img.Length == 0) throw new Exception("Image is required");
@@ -21,20 +20,18 @@ namespace dotnet_anime_list.API.Services
                 await img.CopyToAsync(stream, ct);
             }
             return fileName;
-        }
-        
+        }  
         public void RemoveImg(string path, string fileName, CancellationToken ct)
         {
             var filePath = Path.Combine(path, fileName);
             if (File.Exists(filePath)) File.Delete(filePath);
         }
-
         public async Task<FileContentResult?> GetImg(string path, string fileName, CancellationToken ct)
         {
             var filePath = Path.Combine(path, fileName);
             if (!File.Exists(filePath)) return null;
 
-            var bytes = await File.ReadAllBytesAsync(filePath, ct);
+            byte[] bytes = await File.ReadAllBytesAsync(filePath, ct);
             return new FileContentResult(bytes, "image/jpeg");
         }
     }
