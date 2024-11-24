@@ -33,7 +33,7 @@ namespace dotnet_anime_list.API.Services
         public async Task Update(UpdateUserDTO user, Token token, CancellationToken ct)
         {
             var userToUpdate = await _repository.GetUser(token.UserId, ct) ?? throw new Exception("User not found");
-            if (userToUpdate.Email != user.Email || user.Password != user.Password)
+            if (userToUpdate.Email != user.Email)
                 throw new Exception("Email or password incorrect");
 
             await _repository.Update(userToUpdate, user, ct);
