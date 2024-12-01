@@ -74,8 +74,48 @@ namespace dotnet_anime_list.API.Controllers
                 return BadRequest(new { message = "Error watching anime: " + e.Message });
             }
         }
-
-        //rotas para deletar um anime, atualizar um anime. 
+        [Authorize]
+        [HttpPut("favorite/{animeId}")]
+        public async Task<IActionResult> UpdateFavoriteAnime(Guid animeId, UpdateFavoriteDTO favorite, CancellationToken ct)
+        {
+            try
+            {
+                await _service.UpdateFavoriteAnime(animeId, favorite, ct);
+                return Ok(new { message = "Anime favorite successfully!" });
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { message = "Error favoriting anime: " + e.Message });
+            }
+        }
+        [Authorize]
+        [HttpPut("{animeId}")]
+        public async Task<IActionResult> UpdateAnime(Guid animeId, UpdateAnimeDTO updateAnime, CancellationToken ct)
+        {
+            try
+            {
+                await _service.UpdateAnime(animeId, updateAnime, ct);
+                return Ok(new { message = "Anime updated successfully!" });
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { message = "Error updating anime: " + e.Message });
+            }
+        }
+        [Authorize]
+        [HttpDelete("{animeId}")]
+        public async Task<IActionResult> DeleteAnime(Guid animeId, CancellationToken ct)
+        {
+            try
+            {
+                await _service.DeleteAnime(animeId, ct);
+                return Ok(new { message = "Anime deleted successfully!" });
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { message = "Error deleting anime: " + e.Message });
+            }
+        }
         //todas as rotas de visualização personalizada de animes
     }
 }

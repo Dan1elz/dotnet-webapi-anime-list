@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dotnet-anime-list")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42a484011d2440c57c29a4ded768d725acf77504")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d4af057743930e489971b7aa1ca9a278b507039")]
 [assembly: System.Reflection.AssemblyProductAttribute("dotnet-anime-list")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dotnet-anime-list")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
