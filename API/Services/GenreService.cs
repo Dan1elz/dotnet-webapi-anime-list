@@ -42,10 +42,15 @@ namespace dotnet_anime_list.API.Services
                 Genre? genre = await _repository.GetGenre(genreId, ct);
                 if (genre != null)
                 {
-                    AnimeGenres? animeGenre = new AnimeGenres(AnimeMapper.MapAnimeGenresDTO(genre.Id, AnimeId));
+                    AnimeGenres? animeGenre = new AnimeGenres(AnimeMapper.MapAnimeGenresDTO(AnimeId, genre.Id));
                     await _repository.AddAnimeGenre(animeGenre, ct);
                 }
             }
+        }
+        public async Task RemoveAllAnimeGenres(Guid AnimeId, CancellationToken ct)
+        {
+            var animeGenres = await _repository.GetAimeGenres(AnimeId, ct);
+            await _repository.RemovelAllAnimeGenre(animeGenres, ct);
         }
     }
 }

@@ -43,5 +43,13 @@ namespace dotnet_anime_list.API.Services
             var result = await _repository.GetSeasons(animeId, ct) ?? throw new Exception("Season not found");
             return result.Count;
         }
+        public async Task DeleteSeasons(Guid animeId, CancellationToken ct)
+        {
+            var seasons = await _repository.GetSeasons(animeId, ct) ?? throw new Exception("Season not found");
+            foreach (var season in seasons)
+            {
+                await _repository.Delete(season, ct);
+            }
+        }
     } 
 }

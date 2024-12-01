@@ -3,8 +3,7 @@
 namespace dotnet_anime_list.Data.DTOs
 {
     public record AnimeDTO(Guid UserId, string Title, string? AlternativeTitle, int Year, string Image, string Description, string Lenguage, float Rating, bool FavoriteState, bool WatchedState);
-    public record UpdateAnimeDTO(string Title, string? AlternativeTitle, int Year, string Image, string Description, string Lenguage, float Rating, bool FavoriteState, bool WatchedState);
-    public record UpdateFavoriteDTO(bool FavoriteState);
+   public record UpdateFavoriteDTO(bool FavoriteState);
     public record class UpdateWatchedDTO(bool WatchedState);
     public record AnimeGenresDTO(Guid AnimeId, Guid GenreId);
 
@@ -22,6 +21,19 @@ namespace dotnet_anime_list.Data.DTOs
         bool WatchedState,
         List<Guid>? Genres
     );
+    public record UpdateAnimeDTO(
+        string Title,
+        string? AlternativeTitle,
+        int Year,
+        IFormFile Image,
+        string Description,
+        string Lenguage,
+        float Rating,
+        bool FavoriteState,
+        bool WatchedState,
+        List<Guid>? Genres
+    );
+
 
     public record GetAnimesDTO(
         Anime Anime,

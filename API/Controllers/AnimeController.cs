@@ -20,8 +20,8 @@ namespace dotnet_anime_list.API.Controllers
             try
             {
                 var token = await _authService.AuthenticationToken(_authService.GetTokenToString(HttpContext.Request.Headers["Authorization"].ToString()), ct);
-                await _service.Create(anime, token!, ct);
-                return Ok(new { message = "Anime created successfully!"});
+                var result = await _service.Create(anime, token!, ct);
+                return Ok(new { message = "Anime created successfully!", data = result });
             }
             catch (Exception e)
             {
@@ -57,6 +57,21 @@ namespace dotnet_anime_list.API.Controllers
             catch (Exception e)
             {
                 return BadRequest(new { message = "Error getting anime: " + e.Message });
+            }
+        }
+
+        [Authorize]
+        [HttpPut("watched/{animeId}")]
+        public async Task<IActionResult> UpdateWatchedAnime(Guid animeId, UpdateWatchedDTO watched, CancellationToken ct)
+        {
+            try
+            {
+                await _service.UpdateWatchedAnime(animeId, watched, ct);
+                return Ok(new { message = "Anime watched successfully!" });
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { message = "Error watching anime: " + e.Message });
             }
         }
 

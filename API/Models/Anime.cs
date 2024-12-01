@@ -55,7 +55,7 @@ namespace dotnet_anime_list.API.Models
             this.FavoriteState = anime.FavoriteState;
             this.WatchedState = anime.WatchedState;
         }
-        public void Update(UpdateAnimeDTO anime)
+        public void Update(AnimeDTO anime)
         {
             this.Title = anime.Title;
             this.AlternativeTitle = anime.AlternativeTitle;

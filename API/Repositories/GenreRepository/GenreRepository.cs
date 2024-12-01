@@ -32,8 +32,6 @@ namespace dotnet_anime_list.API.Repositories.GenreRepository
         {
             return await _context.Genre.ToListAsync(ct);
         }
-        
-        
         public async Task AddAnimeGenre(AnimeGenres animeGenres, CancellationToken ct)
         {
             await _context.AnimeGenres.AddAsync(animeGenres, ct);

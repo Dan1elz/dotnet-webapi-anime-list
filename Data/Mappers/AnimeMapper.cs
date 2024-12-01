@@ -9,6 +9,10 @@ namespace dotnet_anime_list.Data.Mappers
         {
             return new AnimeDTO(Id, anime.Title, anime.AlternativeTitle, anime.Year, FileName, anime.Description, anime.Lenguage, anime.Rating, anime.FavoriteState, anime.WatchedState);
         }
+         public static AnimeDTO MapAnimeDTO(Guid Id, UpdateAnimeDTO anime, string FileName)
+         {
+                return new AnimeDTO(Id, anime.Title, anime.AlternativeTitle, anime.Year, FileName, anime.Description, anime.Lenguage, anime.Rating, anime.FavoriteState, anime.WatchedState);
+         }
         public static SeasonDTO MapSeasonDTO(Guid AnimeId, CreateSeasonDTO season)
         {
             return new SeasonDTO(AnimeId, season.SeasonName, season.QuantityEpisodes);
@@ -25,5 +29,6 @@ namespace dotnet_anime_list.Data.Mappers
         {
             return new GetAnimeDTO(new AnimeDTO(anime.UserId, anime.Title, anime.AlternativeTitle, anime.Year, anime.Image, anime.Description, anime.Lenguage, anime.Rating, anime.FavoriteState, anime.WatchedState), genres, seasons, hostUrl);
         }
+       
     }
 }

@@ -12,17 +12,20 @@ namespace dotnet_anime_list.API.Services
         private readonly GenreService _genreService = genreService;
         private readonly SeasonService _seasonService = seasonService;
         private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
+        private string filePath = "Uploads/Images/Animes";
 
-        public async Task Create(CreateAnimeDTO anime, Token token, CancellationToken ct)
+        public async Task<Guid> Create(CreateAnimeDTO anime, Token token, CancellationToken ct)
         {
-            var filePath = "Uploads/Images/Animes";
-            var image = await _utilsService.SaveImg(anime.Image, filePath, ct);
+            var image = await _utilsService.SaveImg(anime.Image, this.filePath, ct);
 
             Anime newAnime = new(AnimeMapper.MapAnimeDTO(token.UserId, anime, image));
             await _repository.Create(newAnime, ct);
 
             if (anime.Genres != null)
                 await _genreService.AddAnimeGenre(anime.Genres, newAnime.Id, ct);
+
+            return newAnime.Id;
+            
         }
         public async Task<List<GetAnimesDTO>> GetAnimes(Token token, CancellationToken ct)
         {
@@ -51,10 +54,47 @@ namespace dotnet_anime_list.API.Services
 
             var genreDTOs = genres.Select(genre => new GenreDTO(genre.Name)).ToList();
             return AnimeMapper.MapToGetAnimeDTO(anime, genreDTOs, seasons, hostUrl);;
-        }
+        } 
         public async Task VerifyAnime(Guid AnimeId, CancellationToken ct)
         {
             var anime = await _repository.GetAnime(AnimeId, ct) ?? throw new Exception("Anime not found");
+        }
+      
+        public async Task UpdateAnime(Guid animeId, UpdateAnimeDTO updateAnime, CancellationToken ct)
+        {
+            Anime anime = await _repository.GetAnime(animeId, ct) ?? throw new Exception("Anime not found");
+            
+            _utilsService.RemoveImg(this.filePath, anime.Image, ct);
+
+            var image = await _utilsService.SaveImg(updateAnime.Image, this.filePath, ct);
+            
+            await _repository.Update(anime, AnimeMapper.MapAnimeDTO(animeId, updateAnime,image), ct);
+
+             if (updateAnime.Genres != null)
+                await _genreService.AddAnimeGenre(updateAnime.Genres, anime.Id, ct);
+        }
+        public async Task UpdateWatchedAnime(Guid animeId, UpdateWatchedDTO watched, CancellationToken ct)
+        {
+             Anime anime = await _repository.GetAnime(animeId, ct) ?? throw new Exception("Anime not found");
+
+            await _repository.UpdateWatchedAnime(anime, watched, ct);
+        }
+        public async Task UpdateFavoriteAnime(Guid animeId, UpdateFavoriteDTO favorite, CancellationToken ct)
+        {
+            Anime anime = await _repository.GetAnime(animeId, ct) ?? throw new Exception("Anime not found");
+
+            await _repository.UpdateFavoriteAnime(anime, favorite, ct);
+        }          
+          public async Task DeleteAnime(Guid AnimeId, CancellationToken ct)
+        {
+            Anime anime = await _repository.GetAnime(AnimeId, ct) ?? throw new Exception("Anime not found");
+
+            _utilsService.RemoveImg(this.filePath, anime.Image, ct);
+            await _repository.Delete(anime, ct);
+            await _genreService.RemoveAllAnimeGenres(anime.Id, ct);
+            await _seasonService.DeleteSeasons(anime.Id, ct);
+            
+    
         }
     }
 }
