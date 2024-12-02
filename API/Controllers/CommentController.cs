@@ -17,8 +17,8 @@ namespace dotnet_anime_list.API.Controllers
         {
             try
             {
-                await _service.Create(comment, ct);
-                return Ok(new { message = "Comment created successfully!" });
+                Guid commentId = await _service.Create(comment, ct);
+                return Ok(new { message = "Comment created successfully!", data = commentId });
             }
             catch(Exception e)
             {
@@ -68,6 +68,20 @@ namespace dotnet_anime_list.API.Controllers
             catch(Exception e)
             {
                 return BadRequest(new { message = "Error get comments: " + e.Message });
+            }
+        }
+        [Authorize]
+        [HttpGet("comment/{Id}")]
+        public async Task<IActionResult> GetComment(Guid Id, CancellationToken ct)
+        {
+            try
+            {
+                var comment = await _service.GetComment(Id, ct);
+                return Ok(comment);
+            }
+            catch(Exception e)
+            {
+                return BadRequest(new { message = "Error get comment: " + e.Message });
             }
         }
     }

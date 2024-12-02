@@ -9,12 +9,14 @@ namespace dotnet_anime_list.API.Services
         private readonly ICommentRepository _commentRepository = commentRepository;
         private readonly AnimeService _animeService = animeService;
         
-        public async Task Create(CommentDTO comment, CancellationToken ct)
+        public async Task<Guid> Create(CommentDTO comment, CancellationToken ct)
         {
             await _animeService.VerifyAnime(comment.AnimeId, ct);
 
             var newComment = new Comment(comment);
             await _commentRepository.Create(newComment, ct);
+
+            return newComment.Id;
         }
         public async Task Delete(Guid id, CancellationToken ct)
         {
@@ -29,6 +31,10 @@ namespace dotnet_anime_list.API.Services
         public async Task<List<Comment>> GetComments(Guid animeId, CancellationToken ct)
         {
            return await _commentRepository.GetComments(animeId, ct) ?? throw new Exception("Comment not found");
-        }        
+        }
+        public async Task<Comment> GetComment(Guid id, CancellationToken ct)
+        {
+            return await _commentRepository.GetComment(id, ct) ?? throw new Exception("Comment not found");
+        }
     }
 }
