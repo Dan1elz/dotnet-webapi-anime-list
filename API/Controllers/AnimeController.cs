@@ -30,21 +30,20 @@ namespace dotnet_anime_list.API.Controllers
         }
         
         [Authorize]
-        [HttpGet]
-        public async Task<IActionResult> GetAnimes(CancellationToken ct)
+        [HttpGet("{offset}/{limit}")]
+        public async Task<IActionResult> GetAnimes(int offset, int limit, CancellationToken ct)
         {
             try
             {
                 var token = await _authService.AuthenticationToken(_authService.GetTokenToString(HttpContext.Request.Headers["Authorization"].ToString()), ct);
-                var animes = await _service.GetAnimes(token!, ct);
-                return Ok(new { message = "Animes found successfully!", data = animes });
+                var (animes, totalCount) = await _service.GetAnimes(token!, offset, limit, ct);
+                return Ok(new { message = "Animes found successfully!", data = animes, total = totalCount });
             }
             catch (Exception e)
             {
                 return BadRequest(new { message = "Error getting animes: " + e.Message });
             }
         }
-
         [Authorize]
         [HttpGet("{animeId}")]
         public async Task<IActionResult> GetAnime(Guid animeId, CancellationToken ct)
@@ -59,7 +58,21 @@ namespace dotnet_anime_list.API.Controllers
                 return BadRequest(new { message = "Error getting anime: " + e.Message });
             }
         }
-
+        [Authorize]
+        [HttpGet("favorite/{offset}/{limit}")]
+        public async Task<IActionResult> GetAnimesFavorited(int offset, int limit, CancellationToken ct)
+        {
+            try
+            {
+                var token = await _authService.AuthenticationToken(_authService.GetTokenToString(HttpContext.Request.Headers["Authorization"].ToString()), ct);
+                var (animes, totalCount) = await _service.GetAnimesFavorited(token!, offset, limit, ct);
+                return Ok(new { message = "Favorited animes found successfully!", data = animes, total = totalCount });
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { message = "Error getting favorited animes: " + e.Message });
+            }
+        }
         [Authorize]
         [HttpPut("watched/{animeId}")]
         public async Task<IActionResult> UpdateWatchedAnime(Guid animeId, UpdateWatchedDTO watched, CancellationToken ct)
@@ -71,7 +84,7 @@ namespace dotnet_anime_list.API.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest(new { message = "Error watching anime: " + e.Message });
+                return BadRequest(new { message = "Error or update watching anime: " + e.Message });
             }
         }
         [Authorize]

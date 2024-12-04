@@ -5,9 +5,10 @@ using dotnet_anime_list.Data.Mappers;
  
 namespace dotnet_anime_list.API.Services
 {
-    public class UserService(IUserRepository repository, AuthService service)
+    public class UserService(IUserRepository repository, AuthService service, AnimeService animeService)
     {
         private readonly IUserRepository _repository = repository;
+        private readonly AnimeService _animeService = animeService;
         private readonly AuthService _service = service;
 
         public async Task Create(CreateUserDTO user, CancellationToken ct)
@@ -28,7 +29,9 @@ namespace dotnet_anime_list.API.Services
         public async Task<UserDTO> GetUser(Token token, CancellationToken ct)
         {
             var user = await _repository.GetUser(token.UserId, ct) ?? throw new Exception("User not found");
-            return UserMapper.MapUserToUserDTO(user);
+            var amount = await _animeService.GetAmountAnimesWatched(token, ct);
+            
+            return UserMapper.MapUserToUserDTO(user, amount);
         }
         public async Task Update(UpdateUserDTO user, Token token, CancellationToken ct)
         {

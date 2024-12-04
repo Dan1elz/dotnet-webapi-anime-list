@@ -5,9 +5,9 @@ namespace dotnet_anime_list.Data.Mappers
 {
     public class UserMapper
     {
-        public static UserDTO MapUserToUserDTO(User user)
+        public static UserDTO MapUserToUserDTO(User user, int Amount)
         {
-            return new UserDTO(user.Id, user.Name, user.LastName, user.Username, user.Email, user.Created, user.Updated);
+            return new UserDTO(user.Id, user.Name, user.LastName, user.Username, user.Email, Amount, user.Created, user.Updated);
         }
     }
 }

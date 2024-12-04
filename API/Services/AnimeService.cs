@@ -27,9 +27,11 @@ namespace dotnet_anime_list.API.Services
             return newAnime.Id;
             
         }
-        public async Task<List<GetAnimesDTO>> GetAnimes(Token token, CancellationToken ct)
+        public async Task<(List<GetAnimesDTO>, int totalCount)> GetAnimes(Token token, int offset, int limit, CancellationToken ct)
         {
-            List<Anime> animes = await _repository.GetAnimes(token.UserId, ct);
+            if (offset < 0 || limit <= 0) throw new Exception("HttpContext is null");
+
+            var(animes,totalCount)  = await _repository.GetAnimes(token.UserId, offset, limit, ct);
             var animeDTOs = new List<GetAnimesDTO>();
 
             foreach (var anime in animes)
@@ -42,7 +44,7 @@ namespace dotnet_anime_list.API.Services
                 var animeDTO = AnimeMapper.MapToGetAnimesDTO(anime, quantitySeasons, hostUrl);
                 animeDTOs.Add(animeDTO);
             } 
-            return animeDTOs;
+            return (animeDTOs, totalCount);
         }
         public async Task<GetAnimeDTO> GetAnime(Guid animeId, CancellationToken ct)
         {
@@ -55,11 +57,35 @@ namespace dotnet_anime_list.API.Services
             var genreDTOs = genres.Select(genre => new GenreDTO(genre.Name)).ToList();
             return AnimeMapper.MapToGetAnimeDTO(anime, genreDTOs, seasons, hostUrl);;
         } 
+        
+        public async Task<(List<GetAnimesDTO>, int totalCount)> GetAnimesFavorited(Token token, int offset, int limit, CancellationToken ct )
+        {
+            if (offset < 0 || limit <= 0) throw new Exception("HttpContext is null");
+
+            var (animes, totalCount) = await _repository.GetAnimesFavorited(token.UserId, offset, limit, ct);
+            var animeDTOs = new List<GetAnimesDTO>();
+
+            foreach (var anime in animes)
+            {
+                var request = _httpContextAccessor.HttpContext?.Request ?? throw new Exception("HttpContext is null");
+                var hostUrl = $"{request.Scheme}://{request.Host}/Uploads/Images/Animes/{anime.Image}";
+
+                var quantitySeasons = await _seasonService.GetQuantitySeasons(anime.Id, ct);
+                quantitySeasons = quantitySeasons == 0 ? 0 : quantitySeasons;
+                var animeDTO = AnimeMapper.MapToGetAnimesDTO(anime, quantitySeasons, hostUrl);
+                animeDTOs.Add(animeDTO);
+            } 
+            return (animeDTOs, totalCount);
+
+        }
+        public async Task<int> GetAmountAnimesWatched(Token token, CancellationToken ct)
+        {
+            return await _repository.GetAmountAnimesWatched(token.UserId, ct);
+        }
         public async Task VerifyAnime(Guid AnimeId, CancellationToken ct)
         {
             var anime = await _repository.GetAnime(AnimeId, ct) ?? throw new Exception("Anime not found");
-        }
-      
+        }  
         public async Task UpdateAnime(Guid animeId, UpdateAnimeDTO updateAnime, CancellationToken ct)
         {
             Anime anime = await _repository.GetAnime(animeId, ct) ?? throw new Exception("Anime not found");
@@ -85,7 +111,7 @@ namespace dotnet_anime_list.API.Services
 
             await _repository.UpdateFavoriteAnime(anime, favorite, ct);
         }          
-          public async Task DeleteAnime(Guid AnimeId, CancellationToken ct)
+        public async Task DeleteAnime(Guid AnimeId, CancellationToken ct)
         {
             Anime anime = await _repository.GetAnime(AnimeId, ct) ?? throw new Exception("Anime not found");
 
