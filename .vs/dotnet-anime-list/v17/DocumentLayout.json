@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\api\\controllers\\animecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|solutionrelative:api\\controllers\\animecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\api\\repositories\\animerepository\\animerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|solutionrelative:api\\repositories\\animerepository\\animerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\data\\dtos\\animedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|solutionrelative:data\\dtos\\animedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\api\\controllers\\animecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|solutionrelative:api\\controllers\\animecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\api\\services\\animeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,6 +17,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\data\\dtos\\animedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|solutionrelative:data\\dtos\\animedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\api\\models\\anime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|solutionrelative:api\\models\\anime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{89B9C479-BFFD-4983-BDF7-8D8E540A6D75}|dotnet-anime-list.csproj|c:\\xampp\\htdocs\\projetos\\dotnet\\dotnet-anime-list\\api\\services\\commentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,28 +54,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "AnimeRepository.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Repositories\\AnimeRepository\\AnimeRepository.cs",
+              "RelativeDocumentMoniker": "API\\Repositories\\AnimeRepository\\AnimeRepository.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Repositories\\AnimeRepository\\AnimeRepository.cs",
+              "RelativeToolTip": "API\\Repositories\\AnimeRepository\\AnimeRepository.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAuwDkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T20:23:22.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "AnimeDTO.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\Data\\DTOs\\AnimeDTO.cs",
               "RelativeDocumentMoniker": "Data\\DTOs\\AnimeDTO.cs",
               "ToolTip": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\Data\\DTOs\\AnimeDTO.cs",
               "RelativeToolTip": "Data\\DTOs\\AnimeDTO.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAmwCIAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAwwAwAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T04:05:25.14Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-30T04:05:25.14Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AnimeController.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Controllers\\AnimeController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\AnimeController.cs",
               "ToolTip": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Controllers\\AnimeController.cs",
               "RelativeToolTip": "API\\Controllers\\AnimeController.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAowDwAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAowF8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T03:46:16.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T00:54:36.088Z",
               "EditorCaption": ""
             },
             {
@@ -74,14 +111,38 @@
               "RelativeDocumentMoniker": "API\\Services\\AnimeService.cs",
               "ToolTip": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Services\\AnimeService.cs",
               "RelativeToolTip": "API\\Services\\AnimeService.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwDUAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAuwHEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T01:09:53.834Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
+              "Title": "Anime.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Models\\Anime.cs",
+              "RelativeDocumentMoniker": "API\\Models\\Anime.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Models\\Anime.cs",
+              "RelativeToolTip": "API\\Models\\Anime.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T20:34:55.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA8wBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T19:31:22.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "CommentService.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\API\\Services\\CommentService.cs",
               "RelativeDocumentMoniker": "API\\Services\\CommentService.cs",
@@ -90,19 +151,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T01:09:50.266Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\projetos\\Dotnet\\dotnet-anime-list\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAgwFsAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T00:54:36.088Z",
-              "EditorCaption": ""
             }
           ]
         }

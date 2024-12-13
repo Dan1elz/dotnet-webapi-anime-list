@@ -8,6 +8,8 @@ namespace dotnet_anime_list.API.Repositories.AnimeRepository
         Task Create(Anime anime, CancellationToken ct);
         Task<(List<Anime> Animes, int TotalCount)> GetAnimes(Guid userId, int offset, int limit, CancellationToken ct);
         Task<(List<Anime> Animes, int TotalCount)> GetAnimesFavorited(Guid userId, int offset, int limit, CancellationToken ct);
+        Task<(List<Anime> Animes, int TotalCount)> GetAnimesRating(Guid userId, int offset, int limit, CancellationToken ct);
+        Task<(List<Anime> Animes, int TotalCount)> GetAnimesByCategory(Guid userId, int offset, int limit, GetCategoryDTO category, CancellationToken ct);
         Task<int> GetAmountAnimesWatched(Guid userId, CancellationToken ct);
         Task<Anime?> GetAnime(Guid animeId, CancellationToken ct);
         Task Update(Anime anime, AnimeDTO updateAnime, CancellationToken ct);

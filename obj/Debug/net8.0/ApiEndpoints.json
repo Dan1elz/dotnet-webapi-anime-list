@@ -62,16 +62,6 @@
   },
   {
     "ContainingType": "dotnet_anime_list.API.Controllers.AnimeController",
-    "Method": "GetAnimes",
-    "RelativePath": "api/Anime",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "dotnet_anime_list.API.Controllers.AnimeController",
     "Method": "GetAnime",
     "RelativePath": "api/Anime/{animeId}",
     "HttpMethod": "GET",
@@ -81,6 +71,174 @@
       {
         "Name": "animeId",
         "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotnet_anime_list.API.Controllers.AnimeController",
+    "Method": "UpdateAnime",
+    "RelativePath": "api/Anime/{animeId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "animeId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateAnime",
+        "Type": "dotnet_anime_list.Data.DTOs.UpdateAnimeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotnet_anime_list.API.Controllers.AnimeController",
+    "Method": "DeleteAnime",
+    "RelativePath": "api/Anime/{animeId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "animeId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotnet_anime_list.API.Controllers.AnimeController",
+    "Method": "GetAnimes",
+    "RelativePath": "api/Anime/{offset}/{limit}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "offset",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotnet_anime_list.API.Controllers.AnimeController",
+    "Method": "GetAnimesByCategory",
+    "RelativePath": "api/Anime/category/{offset}/{limit}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "offset",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "category",
+        "Type": "dotnet_anime_list.Data.DTOs.GetCategoryDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotnet_anime_list.API.Controllers.AnimeController",
+    "Method": "UpdateFavoriteAnime",
+    "RelativePath": "api/Anime/favorite/{animeId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "animeId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "favorite",
+        "Type": "dotnet_anime_list.Data.DTOs.UpdateFavoriteDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotnet_anime_list.API.Controllers.AnimeController",
+    "Method": "GetAnimesFavorited",
+    "RelativePath": "api/Anime/favorite/{offset}/{limit}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "offset",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotnet_anime_list.API.Controllers.AnimeController",
+    "Method": "GetAnimesUltimatums",
+    "RelativePath": "api/Anime/rating/{offset}/{limit}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "offset",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotnet_anime_list.API.Controllers.AnimeController",
+    "Method": "UpdateWatchedAnime",
+    "RelativePath": "api/Anime/watched/{animeId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "animeId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "watched",
+        "Type": "dotnet_anime_list.Data.DTOs.UpdateWatchedDTO",
         "IsRequired": true
       }
     ],
@@ -150,6 +308,22 @@
       {
         "Name": "comment",
         "Type": "dotnet_anime_list.Data.DTOs.UpdateCommentDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "dotnet_anime_list.API.Controllers.CommentController",
+    "Method": "GetComment",
+    "RelativePath": "api/Comment/comment/{Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],

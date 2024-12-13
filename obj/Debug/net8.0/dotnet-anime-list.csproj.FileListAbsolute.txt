@@ -186,3 +186,5 @@ C:\xampp\htdocs\projetos\Dotnet\dotnet-anime-list\bin\Debug\net8.0\zh-Hant\Micro
 C:\xampp\htdocs\projetos\Dotnet\dotnet-anime-list\bin\Debug\net8.0\runtimes\linux-musl-s390x\native\libe_sqlite3.so
 C:\xampp\htdocs\projetos\Dotnet\dotnet-anime-list\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\xampp\htdocs\projetos\Dotnet\dotnet-anime-list\obj\Debug\net8.0\dotnet-anime-list.sourcelink.json
+C:\xampp\htdocs\projetos\Dotnet\dotnet-anime-list\bin\Debug\net8.0\Castle.Core.dll
+C:\xampp\htdocs\projetos\Dotnet\dotnet-anime-list\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Proxies.dll

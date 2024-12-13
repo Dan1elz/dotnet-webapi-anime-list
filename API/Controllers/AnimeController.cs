@@ -74,6 +74,41 @@ namespace dotnet_anime_list.API.Controllers
             }
         }
         [Authorize]
+        [HttpGet("rating/{offset}/{limit}")]
+        public async Task<IActionResult> GetAnimesUltimatums(int offset, int limit, CancellationToken ct)
+        {
+            try
+            {
+                var token = await _authService.AuthenticationToken(_authService.GetTokenToString(HttpContext.Request.Headers["Authorization"].ToString()), ct);
+                var (animes, totalCount) = await _service.GetAnimesRating(token!, offset, limit, ct);
+                return Ok(new { message = "Ultimatums animes found successfully!", data = animes, total = totalCount });
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { message = "Error getting ultimatums animes: " + e.Message });
+            }
+        }
+        [Authorize]
+        [HttpPost("category/{offset}/{limit}")]
+        public async Task<IActionResult> GetAnimesByCategory(int offset, int limit,GetCategoryDTO category, CancellationToken ct)
+        {
+            try
+            {
+                var token = await _authService.AuthenticationToken(_authService.GetTokenToString(HttpContext.Request.Headers["Authorization"].ToString()), ct);
+                var (animes, totalCount) = await _service.GetAnimesByCategory(token!, offset, limit,category, ct);
+                return Ok(new { message = "Animes found by category successfully!", data = animes, total = totalCount });
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { message = "Error getting animes by category: " + e.Message });
+            }
+        }
+
+
+
+        
+        
+        [Authorize]
         [HttpPut("watched/{animeId}")]
         public async Task<IActionResult> UpdateWatchedAnime(Guid animeId, UpdateWatchedDTO watched, CancellationToken ct)
         {

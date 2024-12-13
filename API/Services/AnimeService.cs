@@ -78,6 +78,45 @@ namespace dotnet_anime_list.API.Services
             return (animeDTOs, totalCount);
 
         }
+        
+        public async Task<(List<GetAnimesDTO>, int totalCount)> GetAnimesRating(Token token, int offset, int limit, CancellationToken ct)
+        {
+            if (offset < 0 || limit <= 0) throw new Exception("HttpContext is null");
+
+            var (animes, totalCount) = await _repository.GetAnimesRating(token.UserId, offset, limit, ct);
+            var animeDTOs = new List<GetAnimesDTO>();
+
+            foreach (var anime in animes)
+            {
+                var request = _httpContextAccessor.HttpContext?.Request ?? throw new Exception("HttpContext is null");
+                var hostUrl = $"{request.Scheme}://{request.Host}/Uploads/Images/Animes/{anime.Image}";
+
+                var quantitySeasons = await _seasonService.GetQuantitySeasons(anime.Id, ct);
+                quantitySeasons = quantitySeasons == 0 ? 0 : quantitySeasons;
+                var animeDTO = AnimeMapper.MapToGetAnimesDTO(anime, quantitySeasons, hostUrl);
+                animeDTOs.Add(animeDTO);
+            } 
+            return (animeDTOs, totalCount);
+        }
+
+         public async Task<(List<GetAnimesDTO>, int totalCount)> GetAnimesByCategory(Token token, int offset, int limit, GetCategoryDTO category, CancellationToken ct)
+        {
+            var (animes, totalCount) = await _repository.GetAnimesByCategory(token.UserId, offset, limit, category, ct);
+            var animeDTOs = new List<GetAnimesDTO>();
+
+            foreach (var anime in animes)
+            {
+                var request = _httpContextAccessor.HttpContext?.Request ?? throw new Exception("HttpContext is null");
+                var hostUrl = $"{request.Scheme}://{request.Host}/Uploads/Images/Animes/{anime.Image}";
+
+                var quantitySeasons = await _seasonService.GetQuantitySeasons(anime.Id, ct);
+                quantitySeasons = quantitySeasons == 0 ? 0 : quantitySeasons;
+                var animeDTO = AnimeMapper.MapToGetAnimesDTO(anime, quantitySeasons, hostUrl);
+                animeDTOs.Add(animeDTO);
+            } 
+            return (animeDTOs, totalCount);
+        }
+        
         public async Task<int> GetAmountAnimesWatched(Token token, CancellationToken ct)
         {
             return await _repository.GetAmountAnimesWatched(token.UserId, ct);
